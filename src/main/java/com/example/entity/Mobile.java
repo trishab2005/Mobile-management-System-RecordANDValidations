@@ -1,0 +1,34 @@
+package com.example.entity;
+
+import jakarta.persistence.*;
+import lombok.*;
+//ENTITY CLASS
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@Builder
+@Entity
+@Table(name="mobiledata2")
+public class Mobile {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String brand;
+
+    private String model;
+
+    private Double price;
+
+    private Integer stock;
+
+    public Mobile(String brand, String model, Double price, Integer stock) {
+        this.brand = brand;
+        this.model = model;
+        this.price = price;
+        this.stock = stock;
+    }
+}
